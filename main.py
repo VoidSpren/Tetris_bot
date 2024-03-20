@@ -237,13 +237,12 @@ class AgenteTetris:
 
     moves = []
     if(len(fromList) > 0):
-      moves.append(fromList[len(fromList) - 1][0])
       nodeIndex = fromList[len(fromList) - 1][3] - 1
-      while(nodeIndex > 0):
-        node = fromList[nodeIndex]
+      node = fromList[nodeIndex]
+      while(nodeIndex >= 0):
         moves.append(node[0])
+        node = fromList[nodeIndex]
         nodeIndex = node[3] - 1
-      moves.append(fromList[0][0])
     
     return moves
 
